@@ -6,8 +6,8 @@ const HEAD = (
       borderRadius: "25%",
       border: "10px solid purple",
       position: "absolute",
-      top: "50px",
-      right: "-30px",
+      top: 50,
+      right: -30,
     }}
   ></div>
 );
@@ -19,8 +19,38 @@ const BODY = (
       height: "100px",
       background: "purple",
       position: "absolute",
-      right: 0,
       top: 120,
+      right: 0,
+    }}
+  ></div>
+);
+
+const ARM_RIGHT = (
+  <div
+    style={{
+      width: "100px",
+      height: "10px",
+      background: "purple",
+      position: "absolute",
+      top: 150,
+      right: -100,
+      rotate: "-30deg",
+      transformOrigin: "left bottom",
+    }}
+  ></div>
+);
+
+const ARM_LEFT = (
+  <div
+    style={{
+      width: "100px",
+      height: "10px",
+      background: "purple",
+      position: "absolute",
+      top: 150,
+      right: 10,
+      rotate: "30deg",
+      transformOrigin: "right bottom",
     }}
   ></div>
 );
@@ -31,6 +61,9 @@ export function HangmanDiagram() {
     <div style={{ position: "relative" }}>
       {HEAD}
       {BODY}
+      {ARM_RIGHT}
+      {ARM_LEFT}
+
       {/* Small vertical bar */}
       <div
         style={{

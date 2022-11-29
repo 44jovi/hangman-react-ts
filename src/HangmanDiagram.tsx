@@ -4,7 +4,7 @@ const HEAD = (
       width: "50px",
       height: "50px",
       borderRadius: "25%",
-      border: "10px solid purple",
+      border: "10px solid fuchsia",
       position: "absolute",
       top: 50,
       right: -30,
@@ -17,7 +17,7 @@ const BODY = (
     style={{
       width: "10px",
       height: "100px",
-      background: "purple",
+      background: "fuchsia",
       position: "absolute",
       top: 120,
       right: 0,
@@ -30,7 +30,7 @@ const ARM_RIGHT = (
     style={{
       width: "100px",
       height: "10px",
-      background: "purple",
+      background: "fuchsia",
       position: "absolute",
       top: 150,
       right: -100,
@@ -45,7 +45,7 @@ const ARM_LEFT = (
     style={{
       width: "100px",
       height: "10px",
-      background: "purple",
+      background: "fuchsia",
       position: "absolute",
       top: 150,
       right: 10,
@@ -55,14 +55,47 @@ const ARM_LEFT = (
   ></div>
 );
 
+const LEG_RIGHT = (
+  <div
+    style={{
+      width: "100px",
+      height: "10px",
+      background: "fuchsia",
+      position: "absolute",
+      top: 210,
+      right: -90,
+      rotate: "60deg",
+      transformOrigin: "left bottom",
+    }}
+  ></div>
+);
+
+const LEG_LEFT = (
+  <div
+    style={{
+      width: "100px",
+      height: "10px",
+      background: "fuchsia",
+      position: "absolute",
+      top: 210,
+      right: 0,
+      rotate: "-60deg",
+      transformOrigin: "right bottom",
+    }}
+  ></div>
+);
+
 export function HangmanDiagram() {
   // Main div
   return (
     <div style={{ position: "relative" }}>
+      {/* Person */}
       {HEAD}
       {BODY}
       {ARM_RIGHT}
       {ARM_LEFT}
+      {LEG_RIGHT}
+      {LEG_LEFT}
 
       {/* Small vertical bar */}
       <div
@@ -76,6 +109,7 @@ export function HangmanDiagram() {
           right: 0,
         }}
       ></div>
+
       {/* Top horizontal bar */}
       <div
         style={{
@@ -85,6 +119,7 @@ export function HangmanDiagram() {
           marginLeft: "120px",
         }}
       ></div>
+
       {/* Central vertical bar */}
       <div
         style={{

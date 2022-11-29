@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { HangmanDiagram } from "./HangmanDiagram";
+import { HangmanKeyboard } from "./HangmanKeyboard";
+import { HangmanWord } from "./HangmanWord";
+import { Keyboard } from "./Keyboard";
 import words from "./word-list.json";
 
 function App() {
@@ -23,6 +27,10 @@ function App() {
     >
       {/* Main game message based on game state */}
       <div style={{ fontSize: "2rem", textAlign: "center" }}>PLACEHOLDER</div>
+      {/* Custom components */}
+      <HangmanDiagram />
+      <HangmanWord />
+      <HangmanKeyboard />
     </div>
   );
 }

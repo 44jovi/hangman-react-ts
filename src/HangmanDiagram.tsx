@@ -1,7 +1,22 @@
+const HEAD = (
+  <div
+    style={{
+      width: "50px",
+      height: "50px",
+      borderRadius: "25%",
+      border: "10px solid purple",
+      position: "absolute",
+      top: "50px",
+      right: "-30px",
+    }}
+  ></div>
+);
+
 export function HangmanDiagram() {
   // Main div
   return (
     <div style={{ position: "relative" }}>
+      {HEAD}
       {/* Small vertical bar */}
       <div
         style={{

@@ -14,6 +14,8 @@ function App() {
 
   // Letters guessed - set type to array of strings
   const [lettersGuessed, setLettersGuessed] = useState<string[]>([]);
+
+  // Main game div
   return (
     <div
       style={{
@@ -27,6 +29,7 @@ function App() {
     >
       {/* Main game message based on game state */}
       <div style={{ fontSize: "2rem", textAlign: "center" }}>PLACEHOLDER</div>
+
       {/* Custom components */}
       <HangmanDiagram />
       <HangmanWord />

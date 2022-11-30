@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { HangmanDiagram } from "./HangmanDiagram";
 import { HangmanKeyboard } from "./HangmanKeyboard";
 import { HangmanWord } from "./HangmanWord";
@@ -20,19 +20,27 @@ function App() {
   );
 
   // Player keyboard presses
-  function addGuessedLetter(letter: string) {
-    if (lettersGuessed.includes(letter)) return;
-    setLettersGuessed((currentLettersGuessed) => [
-      ...currentLettersGuessed,
-      letter,
-    ]);
-  }
+  // useCallback() used to prevent unnecessary recreation of this function and re-rendering event handler
+  const addGuessedLetter = useCallback(
+    (letter: string) => {
+      if (lettersGuessed.includes(letter)) return;
+
+      setLettersGuessed((currentLettersGuessed) => [
+        ...currentLettersGuessed,
+        letter,
+      ]);
+    },
+    // Function only re-runs if this changes
+    [lettersGuessed]
+  );
 
   useEffect(() => {
     const handler = (event: KeyboardEvent) => {
       const key = event.key;
+
       // Ignore non-alphabetic keypresses
       if (!key.match(/^[a-z]$/)) return;
+
       // Prevent default behaviour of the keypress
       event.preventDefault();
       addGuessedLetter(key);
@@ -43,7 +51,7 @@ function App() {
     return () => {
       document.removeEventListener("keypress", handler);
     };
-  });
+  }, [lettersGuessed]);
 
   // Main game div
   return (

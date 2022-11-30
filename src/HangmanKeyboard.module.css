@@ -26,7 +26,7 @@
   background-color: yellow;
 }
 
-/* Conditional hover styling */
+/* Conditional focus styling */
 .btn:focus:not(:disabled) {
   color: yellow;
   background-color: hsl(300, 100%, 75%);

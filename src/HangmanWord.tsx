@@ -10,7 +10,7 @@ export function HangmanWord() {
         fontSize: "6rem",
         fontWeight: "bold",
         textTransform: "uppercase",
-        fontFamily: "san-serif",
+        fontFamily: "arial",
       }}
     >
       {word.split("").map((letter, index) => (

@@ -27,7 +27,11 @@ function App() {
       }}
     >
       {/* Main game message based on game state */}
-      <div style={{ fontSize: "2rem", textAlign: "center" }}>PLACEHOLDER</div>
+      <div
+        style={{ fontSize: "2rem", fontFamily: "arial", textAlign: "center" }}
+      >
+        PLACEHOLDER
+      </div>
 
       {/* Custom components */}
       <HangmanDiagram />

@@ -85,17 +85,18 @@ const LEG_LEFT = (
   ></div>
 );
 
-export function HangmanDiagram() {
+// In order of 'appearance'
+const BODY_PARTS = [HEAD, BODY, ARM_RIGHT, ARM_LEFT, LEG_RIGHT, LEG_LEFT];
+
+type HangmanDiagramProps = {
+  guessCount: number;
+};
+
+export function HangmanDiagram({ guessCount }: HangmanDiagramProps) {
   // Main div
   return (
     <div style={{ position: "relative" }}>
-      {/* Person */}
-      {HEAD}
-      {BODY}
-      {ARM_RIGHT}
-      {ARM_LEFT}
-      {LEG_RIGHT}
-      {LEG_LEFT}
+      {BODY_PARTS.slice(0, guessCount)}
 
       {/* Small vertical bar */}
       <div

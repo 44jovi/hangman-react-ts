@@ -129,6 +129,8 @@ export function HangmanDiagram() {
           marginLeft: "120px",
         }}
       ></div>
+
+      {/* Bottom horizontal bar */}
       <div
         style={{ height: "10px", width: "250px", background: "black" }}
       ></div>

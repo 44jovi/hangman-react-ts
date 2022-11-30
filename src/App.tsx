@@ -14,6 +14,14 @@ function App() {
   // Letters guessed - set type to array of strings
   const [lettersGuessed, setLettersGuessed] = useState<string[]>([]);
 
+  // Incorrect letters guessed
+  const incorrectLetters = lettersGuessed.filter(
+    (letter) => !wordToGuess.includes(letter)
+  );
+
+  // Future: remove
+  console.log(incorrectLetters);
+
   // Main game div
   return (
     <div
@@ -34,7 +42,7 @@ function App() {
       </div>
 
       {/* Custom components */}
-      <HangmanDiagram />
+      <HangmanDiagram guessCount={incorrectLetters.length} />
       <HangmanWord />
       <div style={{ alignSelf: "stretch" }}>
         <HangmanKeyboard />

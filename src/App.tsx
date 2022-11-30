@@ -2,7 +2,6 @@ import { useState } from "react";
 import { HangmanDiagram } from "./HangmanDiagram";
 import { HangmanKeyboard } from "./HangmanKeyboard";
 import { HangmanWord } from "./HangmanWord";
-import { Keyboard } from "./Keyboard";
 import words from "./word-list.json";
 
 function App() {

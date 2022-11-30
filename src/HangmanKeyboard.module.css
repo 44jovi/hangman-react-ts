@@ -1,6 +1,7 @@
 .btn {
   width: 100%;
   border: 2px solid;
+  border-radius: 25%;
   background: none;
   aspect-ratio: 1/1;
   font-size: 4rem;

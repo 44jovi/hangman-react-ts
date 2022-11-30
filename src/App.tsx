@@ -22,7 +22,7 @@ function App() {
         maxWidth: "800 px",
         display: "flex",
         flexDirection: "column",
-        gap: "4rem",
+        gap: "2rem",
         margin: "0 auto",
         alignItems: "center",
       }}
@@ -33,7 +33,9 @@ function App() {
       {/* Custom components */}
       <HangmanDiagram />
       <HangmanWord />
-      <HangmanKeyboard />
+      <div style={{ alignSelf: "stretch" }}>
+        <HangmanKeyboard />
+      </div>
     </div>
   );
 }

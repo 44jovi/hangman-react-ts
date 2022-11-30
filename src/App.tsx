@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HangmanDiagram } from "./HangmanDiagram";
 import { HangmanKeyboard } from "./HangmanKeyboard";
 import { HangmanWord } from "./HangmanWord";
@@ -19,8 +19,31 @@ function App() {
     (letter) => !wordToGuess.includes(letter)
   );
 
-  // Future: remove
-  console.log(incorrectLetters);
+  // Player keyboard presses
+  function addGuessedLetter(letter: string) {
+    if (lettersGuessed.includes(letter)) return;
+    setLettersGuessed((currentLettersGuessed) => [
+      ...currentLettersGuessed,
+      letter,
+    ]);
+  }
+
+  useEffect(() => {
+    const handler = (event: KeyboardEvent) => {
+      const key = event.key;
+      // Ignore non-alphabetic keypresses
+      if (!key.match(/^[a-z]$/)) return;
+      // Prevent default behaviour of the keypress
+      event.preventDefault();
+      addGuessedLetter(key);
+    };
+
+    document.addEventListener("keypress", handler);
+
+    return () => {
+      document.removeEventListener("keypress", handler);
+    };
+  });
 
   // Main game div
   return (

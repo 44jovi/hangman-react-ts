@@ -1,1 +1,11 @@
-["chicken", "cow", "pig", "horse", "sheep", "goat", "duck", "duck"]
+[
+  "chicken",
+  "elephant",
+  "bird",
+  "horse",
+  "sheep",
+  "goat",
+  "duck",
+  "donkey",
+  "camel"
+]

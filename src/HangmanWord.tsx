@@ -1,5 +1,7 @@
 export function HangmanWord() {
   const word = "hello";
+  // WIP: example letter guessed
+  const lettersGuessed = ["l"];
   return (
     <div
       style={{
@@ -11,7 +13,19 @@ export function HangmanWord() {
         fontFamily: "san-serif",
       }}
     >
-      {word}
+      {word.split("").map((letter, index) => (
+        <span style={{ borderBottom: ".1em solid black" }}>
+          <span
+            style={{
+              visibility: lettersGuessed.includes(letter)
+                ? "visible"
+                : "hidden",
+            }}
+          >
+            {letter}
+          </span>
+        </span>
+      ))}
     </div>
   );
 }

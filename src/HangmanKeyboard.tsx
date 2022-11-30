@@ -40,7 +40,7 @@ export function HangmanKeyboard() {
     >
       {KEYS.map((key) => {
         return (
-          <button className={styles.btn} key={key}>
+          <button className={`${styles.btn}`} key={key}>
             {key}
           </button>
         );

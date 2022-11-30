@@ -43,7 +43,7 @@ function App() {
 
       {/* Custom components */}
       <HangmanDiagram guessCount={incorrectLetters.length} />
-      <HangmanWord />
+      <HangmanWord lettersGuessed={lettersGuessed} wordToGuess={wordToGuess} />
       <div style={{ alignSelf: "stretch" }}>
         <HangmanKeyboard />
       </div>

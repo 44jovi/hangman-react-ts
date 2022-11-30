@@ -1,0 +1,12 @@
+.btn {
+  width: 100%;
+  border: 2px solid;
+  background: none;
+  aspect-ratio: 1/1;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: arial;
+  cursor: pointer;
+  /* Consider padding and forcing font colour to be black */
+}

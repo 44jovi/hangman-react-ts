@@ -76,7 +76,13 @@ function App() {
       <HangmanDiagram guessCount={incorrectLetters.length} />
       <HangmanWord lettersGuessed={lettersGuessed} wordToGuess={wordToGuess} />
       <div style={{ alignSelf: "stretch" }}>
-        <HangmanKeyboard />
+        <HangmanKeyboard
+          activeLetters={lettersGuessed.filter((letter) =>
+            wordToGuess.includes(letter)
+          )}
+          inactiveLetters={incorrectLetters}
+          addGuessedLetter={addGuessedLetter}
+        />
       </div>
     </div>
   );

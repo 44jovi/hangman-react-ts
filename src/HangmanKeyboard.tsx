@@ -34,12 +34,14 @@ type HangmanKeyboardProps = {
   inactiveLetters: string[];
   // Return value void - function is a side effect / action
   addGuessedLetter: (letter: string) => void;
+  disabled?: boolean;
 };
 
 export function HangmanKeyboard({
   activeLetters,
   inactiveLetters,
   addGuessedLetter,
+  disabled = false,
 }: HangmanKeyboardProps) {
   return (
     <div
@@ -57,7 +59,7 @@ export function HangmanKeyboard({
             className={`${styles.btn} ${active ? styles.active : ""} ${
               inactive ? styles.inactive : ""
             }`}
-            disabled={active || inactive}
+            disabled={active || inactive || disabled}
             key={key}
             onClick={() => addGuessedLetter(key)}
           >

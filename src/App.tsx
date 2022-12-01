@@ -5,16 +5,14 @@ import { HangmanWord } from "./HangmanWord";
 import words from "./word-list.json";
 
 function App() {
-  // Word to be guessed
+  // Core game variables
   const [wordToGuess, setWordToGuess] = useState(() => {
-    // Random word from existing word list
+    // From existing word list
     return words[Math.floor(Math.random() * words.length)];
   });
 
-  // Letters guessed - set type to array of strings
   const [lettersGuessed, setLettersGuessed] = useState<string[]>([]);
 
-  // Incorrect letters guessed
   const incorrectLetters = lettersGuessed.filter(
     (letter) => !wordToGuess.includes(letter)
   );
@@ -82,7 +80,11 @@ function App() {
 
       {/* Custom components */}
       <HangmanDiagram guessCount={incorrectLetters.length} />
-      <HangmanWord lettersGuessed={lettersGuessed} wordToGuess={wordToGuess} />
+      <HangmanWord
+        lettersGuessed={lettersGuessed}
+        wordToGuess={wordToGuess}
+        revealWord={gameLost}
+      />
       <div style={{ alignSelf: "stretch" }}>
         <HangmanKeyboard
           activeLetters={lettersGuessed.filter((letter) =>

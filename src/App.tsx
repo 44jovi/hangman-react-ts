@@ -19,6 +19,13 @@ function App() {
     (letter) => !wordToGuess.includes(letter)
   );
 
+  // Win / Lose logic
+  const gameLost = lettersGuessed.length > 5;
+  const gameWon = wordToGuess
+    .split("")
+    // Return true if all letters in word to guess are in letters guessed
+    .every((letter) => lettersGuessed.includes(letter));
+
   // Player keyboard presses
   // useCallback() used to prevent unnecessary recreation of this function and re-rendering event handler
   const addGuessedLetter = useCallback(
@@ -69,7 +76,8 @@ function App() {
       <div
         style={{ fontSize: "2rem", fontFamily: "arial", textAlign: "center" }}
       >
-        PLACEHOLDER
+        {gameWon && "You won!"}
+        {gameLost && "You lost!"}
       </div>
 
       {/* Custom components */}

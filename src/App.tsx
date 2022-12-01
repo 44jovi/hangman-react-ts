@@ -4,12 +4,14 @@ import { HangmanKeyboard } from "./HangmanKeyboard";
 import { HangmanWord } from "./HangmanWord";
 import words from "./word-list.json";
 
+function newWord() {
+  // From existing word list
+  return words[Math.floor(Math.random() * words.length)];
+}
+
 function App() {
   // Core game variables
-  const [wordToGuess, setWordToGuess] = useState(() => {
-    // From existing word list
-    return words[Math.floor(Math.random() * words.length)];
-  });
+  const [wordToGuess, setWordToGuess] = useState(newWord);
 
   const [lettersGuessed, setLettersGuessed] = useState<string[]>([]);
 
@@ -39,6 +41,7 @@ function App() {
     [lettersGuessed]
   );
 
+  // Submit guessed letter
   useEffect(() => {
     const handler = (event: KeyboardEvent) => {
       const key = event.key;
@@ -58,6 +61,24 @@ function App() {
     };
   }, [lettersGuessed]);
 
+  // Start new game (get new word)
+  // Future: use custom hook to combine this and previous useEffect()
+  useEffect(() => {
+    const handler = (event: KeyboardEvent) => {
+      const key = event.key;
+      if (key !== "Enter") return;
+
+      event.preventDefault();
+      setWordToGuess(newWord());
+    };
+
+    document.addEventListener("keypress", handler);
+
+    return () => {
+      document.removeEventListener("keypress", handler);
+    };
+  }, []);
+
   // Main game div
   return (
     <div
@@ -74,8 +95,8 @@ function App() {
       <div
         style={{ fontSize: "2rem", fontFamily: "arial", textAlign: "center" }}
       >
-        {gameWon && "You won!"}
-        {gameLost && "You lost!"}
+        {gameWon && "You won! Press ENTER."}
+        {gameLost && "You lost! Press ENTER."}
       </div>
 
       {/* Custom components */}

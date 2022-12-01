@@ -24,7 +24,7 @@ function App() {
     .split("")
     // Return true if all letters in word to guess are in letters guessed
     .every((letter) => lettersGuessed.includes(letter));
-  const gameLost = lettersGuessed.length > 5;
+  const gameLost = incorrectLetters.length > 5;
 
   // Player keyboard presses
   // useCallback() used to prevent unnecessary recreation of this function and re-rendering event handler

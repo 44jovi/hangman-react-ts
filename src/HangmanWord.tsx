@@ -28,6 +28,10 @@ export function HangmanWord({
                 lettersGuessed.includes(letter) || revealWord
                   ? "visible"
                   : "hidden",
+              color:
+                !lettersGuessed.includes(letter) && revealWord
+                  ? "red"
+                  : "black",
             }}
           >
             {letter}

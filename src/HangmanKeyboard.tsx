@@ -50,9 +50,14 @@ export function HangmanKeyboard({
       }}
     >
       {KEYS.map((key) => {
+        const active = activeLetters.includes(key);
+        const inactive = inactiveLetters.includes(key);
         return (
           <button
-            className={`${styles.btn}`}
+            className={`${styles.btn} ${active ? styles.active : ""} ${
+              inactive ? styles.inactive : ""
+            }`}
+            disabled={active || inactive}
             key={key}
             onClick={() => addGuessedLetter(key)}
           >

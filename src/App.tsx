@@ -69,6 +69,8 @@ function App() {
       if (key !== "Enter") return;
 
       event.preventDefault();
+      // Clear array of guessed letters
+      setLettersGuessed([]);
       setWordToGuess(newWord());
     };
 

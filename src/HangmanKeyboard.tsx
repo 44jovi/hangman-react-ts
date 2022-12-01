@@ -29,7 +29,18 @@ const KEYS = [
   "z",
 ];
 
-export function HangmanKeyboard() {
+type HangmanKeyboardProps = {
+  activeLetters: string[];
+  inactiveLetters: string[];
+  // Return value void - function is a side effect / action
+  addGuessedLetter: (letter: string) => void;
+};
+
+export function HangmanKeyboard({
+  activeLetters,
+  inactiveLetters,
+  addGuessedLetter,
+}: HangmanKeyboardProps) {
   return (
     <div
       style={{
@@ -40,7 +51,11 @@ export function HangmanKeyboard() {
     >
       {KEYS.map((key) => {
         return (
-          <button className={`${styles.btn}`} key={key}>
+          <button
+            className={`${styles.btn}`}
+            key={key}
+            onClick={() => addGuessedLetter(key)}
+          >
             {key}
           </button>
         );

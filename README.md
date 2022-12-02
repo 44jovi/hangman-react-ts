@@ -5,6 +5,10 @@
   <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>  
 </div>
 
+## Play it
+
+- [Play Hangman Game](https://hangman-44jovi.netlify.app/)
+
 ## About
 
 - Hands-on learning of React (with custom types via TypeScript)

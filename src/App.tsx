@@ -95,8 +95,16 @@ function App() {
     >
       {/* Main game message based on game state */}
       <div
-        style={{ fontSize: "2rem", fontFamily: "arial", textAlign: "center" }}
+        style={{
+          fontSize: "3rem",
+          color: "white",
+          fontFamily: "courier",
+          fontWeight: "bold",
+          textAlign: "center",
+          padding: "5%",
+        }}
       >
+        {!gameWon && !gameLost && "Clue: Animal..."}
         {gameWon && "You won! Press ENTER."}
         {gameLost && "You lost! Press ENTER."}
       </div>

@@ -17,11 +17,11 @@ export function HangmanWord({
         fontSize: "6rem",
         fontWeight: "bold",
         textTransform: "uppercase",
-        fontFamily: "arial",
+        fontFamily: "courier",
       }}
     >
       {wordToGuess.split("").map((letter, index) => (
-        <span style={{ borderBottom: ".1em solid black" }} key={index}>
+        <span style={{ borderBottom: ".1em solid white" }} key={index}>
           <span
             style={{
               visibility:
@@ -31,7 +31,7 @@ export function HangmanWord({
               color:
                 !lettersGuessed.includes(letter) && revealWord
                   ? "red"
-                  : "black",
+                  : "white",
             }}
           >
             {letter}

@@ -103,7 +103,7 @@ export function HangmanDiagram({ guessCount }: HangmanDiagramProps) {
         style={{
           height: "50px",
           width: "10px",
-          background: "black",
+          background: "white",
           marginLeft: "120px",
           position: "absolute",
           top: 0,
@@ -116,7 +116,7 @@ export function HangmanDiagram({ guessCount }: HangmanDiagramProps) {
         style={{
           height: "10px",
           width: "200px",
-          background: "black",
+          background: "white",
           marginLeft: "120px",
         }}
       ></div>
@@ -126,14 +126,14 @@ export function HangmanDiagram({ guessCount }: HangmanDiagramProps) {
         style={{
           height: "400px",
           width: "10px",
-          background: "black",
+          background: "white",
           marginLeft: "120px",
         }}
       ></div>
 
       {/* Bottom horizontal bar */}
       <div
-        style={{ height: "10px", width: "250px", background: "black" }}
+        style={{ height: "20px", width: "250px", background: "white" }}
       ></div>
     </div>
   );

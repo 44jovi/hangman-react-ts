@@ -13,7 +13,9 @@ This README is a WIP.
 
 ----
 
-![Screenshot](public/1-game-start.png)
-![Screenshot](public/2-game-play.png)
-![Screenshot](public/3-game-won.png)
-![Screenshot](public/4-game-lost.png)
+<div>
+  <img src="public/1-game-start.png" width="400">
+  <img src="public/2-game-play.png" width="400">
+  <img src="public/3-game-won.png" width="400">
+  <img src="public/4-game-lost.png" width="400">
+</div>

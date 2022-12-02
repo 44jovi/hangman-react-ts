@@ -13,4 +13,7 @@ This README is a WIP.
 
 ----
 
-![WIP](public/wip.png)
+![Screenshot](public/1-game-start.png)
+![Screenshot](public/2-game-play.png)
+![Screenshot](public/3-game-won.png)
+![Screenshot](public/4-game-lost.png)

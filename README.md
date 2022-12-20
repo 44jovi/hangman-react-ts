@@ -16,7 +16,7 @@
 
 ## Key Learnings
 
-- React compmonents and props
+- React components and props
 - React hooks
   - useState()
   - useEffect()
